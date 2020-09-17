@@ -1,0 +1,35 @@
+$primary-color: #e6017d;
+$primary-grey: lighten(desaturate($primary-color, 85%), 10%);
+
+$secondary-color: #5cc1d0;
+$secondary-grey: lighten(desaturate($secondary-color, 45%), 10%);
+
+$light: lighten(desaturate($primary-color, 91%), 55%);
+$dark: darken(desaturate($primary-color, 85%), 25%);
+
+$grey: desaturate($primary-color, 95%);
+
+$grey-25: darken($light, 25%);
+$grey-50: darken($light, 50%);
+$grey-75: darken($light, 75%);
+
+$grey-100: darken($light, 10%);
+$grey-200: darken($light, 20%);
+$grey-300: darken($light, 30%);
+$grey-400: darken($light, 40%);
+$grey-500: darken($light, 50%);
+$grey-600: darken($light, 60%);
+$grey-700: darken($light, 70%);
+$grey-800: darken($light, 80%);
+$grey-900: darken($light, 90%);
+
+@import url('//db.onlinewebfonts.com/c/f260793cdbab86576748af1d344a3bab?family=Serif+Gothic+BQ');
+$display-font: 'Serif Gothic BQ', 'Georgia', serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+$main-font: 'Roboto Condensed', 'Helvetica', sans-serif;
+
+$max-width: 900px;
+
+$w1-3: calc(100% / 3);
+$w2-3: calc((100% / 3) * 2);

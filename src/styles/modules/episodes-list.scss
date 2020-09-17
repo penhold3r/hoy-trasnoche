@@ -1,0 +1,54 @@
+.episodes-list {
+	margin: 3rem 0;
+
+	.episode-card {
+		background: $dark;
+		border: 1px solid $primary-grey;
+		box-shadow: 4px 4px 0 0 $primary-grey;
+		display: block;
+		margin: 0 0 2.5rem;
+		padding: 2rem;
+		position: relative;
+		transition: all 0.3s;
+		text-decoration: none;
+
+		.episode-number {
+			background: $primary-color;
+			color: $light;
+			display: inline-block;
+			padding: 0.5rem 1rem;
+			font-family: $display-font;
+			position: absolute;
+			top: -1rem;
+			right: 1rem;
+		}
+
+		.episode-title {
+			color: $secondary-color;
+			font-family: $display-font;
+			font-size: 1.75rem;
+			letter-spacing: 0.09rem;
+			margin: 0 0 1rem;
+			transition: all 0.3s;
+		}
+
+		.episode-date {
+			color: $light;
+			margin: 0;
+		}
+
+		&:hover {
+			background: $grey-800;
+			border-color: $primary-color;
+			box-shadow: 4px 4px 0 0 $primary-color;
+
+			.episode-title {
+				color: $secondary-grey;
+			}
+		}
+	}
+
+	&.daily {
+		display: none;
+	}
+}

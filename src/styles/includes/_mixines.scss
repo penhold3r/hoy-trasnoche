@@ -1,0 +1,75 @@
+// escape nesting at root
+@mixin at-root($sel) {
+	@at-root #{if(not &, $sel, selector-append(&, $sel))} {
+		@content;
+	}
+}
+
+// prefix placeholder
+@mixin placeholder {
+	@include at-root('::-webkit-input-placeholder') {
+		@content;
+	}
+	@include at-root(':-moz-placeholder') {
+		@content;
+	}
+	@include at-root('::-moz-placeholder') {
+		@content;
+	}
+	@include at-root(':-ms-input-placeholder') {
+		@content;
+	}
+}
+
+// scrollbar styling
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
+	// Webkit
+	&::-webkit-scrollbar {
+		height: $size;
+		width: $size;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: rgba($foreground-color, 0.7);
+
+		&:hover {
+			background: $foreground-color;
+		}
+	}
+
+	&::-webkit-scrollbar-track {
+		background: $background-color;
+	}
+
+	// Firefox
+	scrollbar-color: $foreground-color $background-color;
+}
+
+// firefox targeting
+@mixin firefox {
+	@supports (-moz-appearance: none) {
+		@content;
+	}
+}
+
+// mediaqueries
+@mixin full($width: 1300px) {
+	@media screen and (max-width: $width) {
+		@content;
+	}
+}
+@mixin narrow($width: 1100px) {
+	@media screen and (max-width: $width) {
+		@content;
+	}
+}
+@mixin tablet($width: 760px) {
+	@media screen and (max-width: $width) {
+		@content;
+	}
+}
+@mixin phone($width: 540px) {
+	@media screen and (max-width: $width) {
+		@content;
+	}
+}

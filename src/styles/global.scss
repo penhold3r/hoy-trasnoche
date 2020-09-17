@@ -1,0 +1,44 @@
+@import './includes/*.scss';
+/******************************************************
+*                    SOME FIXES
+******************************************************/
+*,
+*:after,
+*:before {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-appearance: none !important;
+	-webkit-font-smoothing: antialiased;
+	box-sizing: border-box;
+	hyphens: none;
+	outline: none;
+}
+/******************************************************
+*                  GLOBAL STYLES 
+******************************************************/
+html,
+body {
+	scroll-behavior: smooth;
+
+	@include firefox {
+		font-size: 85%;
+	}
+
+	@include scrollbars(10px, $primary-color, $grey);
+}
+
+body {
+	background: $grey-900;
+	color: $light;
+	font-family: $main-font;
+
+	.container {
+		margin: 0 auto;
+		max-width: $max-width;
+		padding: 1rem;
+	}
+}
+
+/******************************************************
+*                    MODULES
+******************************************************/
+@import './modules/*.scss';

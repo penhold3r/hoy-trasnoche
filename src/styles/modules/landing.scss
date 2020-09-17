@@ -1,0 +1,35 @@
+.lead {
+	font-size: 1.5rem;
+	line-height: 1.7;
+
+	a {
+		color: $light;
+		text-decoration: none;
+		position: relative;
+		transition: all 0.3s;
+
+		&:after {
+			content: '';
+			height: 1px;
+			width: 100%;
+			position: absolute;
+			bottom: -3px;
+			left: 0;
+			background: $secondary-color;
+		}
+
+		&:hover {
+			color: $secondary-color;
+		}
+	}
+}
+
+small:before {
+	background: $primary-color;
+	content: '';
+	display: inline-flex;
+	height: 1px;
+	margin-right: 1rem;
+	transform: translateY(-3px);
+	width: 30px;
+}
