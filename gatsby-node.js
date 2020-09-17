@@ -82,7 +82,7 @@ const fetchEpisodes = async (token, nextPage) => {
 	const items = await resultData.items.map(ep => ({
 		id: ep.id,
 		name: ep.name,
-		slug: slugify(ep.name, { lower: true, remove: /[*+~.()'"¡!¿?:@]/g }),
+		slug: slugify(ep.name, { lower: true, remove: /[*+~.()'"¡!¿?:@#]/g }),
 		description: ep.description,
 		date: ep.release_date,
 		urls: {
