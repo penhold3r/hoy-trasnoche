@@ -6,6 +6,10 @@ import Link from '../components/link'
 
 import episodesMovies from '../data/movies'
 
+//https://en.wikipedia.org/w/api.php?action=query&prop=pageimages|extracts&titles=Danny_Boyle&format=json
+
+//https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Danny_Boyle_May_2019.jpg/600px-Danny_Boyle_May_2019.jpg
+
 const Episode = ({ pageContext }) => {
 	const { episode } = pageContext
 	const [moviesData, setMoviesData] = useState([])
@@ -71,7 +75,7 @@ const Episode = ({ pageContext }) => {
 							{moviesData && (
 								<div className='movies__list'>
 									{moviesData.map(movie => (
-										<div className='movie-card' key={movie.id}>
+										<div className='movie-card' data-id={movie.id} key={movie.id}>
 											<div className='poster'>
 												<img src={movie.poster} alt={movie.title} />
 											</div>
