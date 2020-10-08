@@ -28,7 +28,7 @@ module.exports = {
 			resolve: 'gatsby-plugin-web-font-loader',
 			options: {
 				custom: {
-					families: ['Serif Gothic BQ'],
+					families: ['Serif Gothic BQ', 'Friz Quadrata'],
 					urls: ['/fonts/fonts.css'],
 				},
 			},

@@ -33,7 +33,7 @@
 		&__list {
 			display: grid;
 			gap: 1.5rem;
-			grid-template-columns: repeat(4, 1fr);
+			grid-template-columns: repeat(3, 1fr);
 
 			@include tablet {
 				grid-template-columns: 1fr 1fr;
@@ -53,7 +53,7 @@
 
 				.poster {
 					margin: 0 0 1rem;
-					height: 250px;
+					height: 275px;
 
 					@include tablet {
 						height: 350px;

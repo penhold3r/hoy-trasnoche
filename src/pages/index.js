@@ -27,19 +27,21 @@ const IndexPage = () => {
 
 	return (
 		<Layout>
+			<div className='hero'>
+				<div className='container'>
+					<p className='lead'>
+						Hoy Trasnoche no es otro podcast de cine. Es <em>"el otro"</em> podcast de cine.
+						Para los que saben que hay mucho más que los estrenos de la semana.
+					</p>
+					<p className='lead'>
+						Conducen <Link to={'https://twitter.com/sancalori'}>Santiago Calori</Link> y{' '}
+						<Link to={'https://twitter.com/FioSargenti'}>Fiorella Sargenti</Link>.
+					</p>
+					<small>Hoy Trasnoche es un podcast original de Posta.</small>
+				</div>
+			</div>
 			<div className='container'>
-				<p className='lead'>
-					Hoy Trasnoche no es otro podcast de cine. Es <em>"el otro"</em> podcast de cine. Para
-					los que saben que hay mucho más que los estrenos de la semana.
-				</p>
-				<p className='lead'>
-					Conducen <Link to={'https://twitter.com/sancalori'}>Santiago Calori</Link> y{' '}
-					<Link to={'https://twitter.com/FioSargenti'}>Fiorella Sargenti</Link>.
-				</p>
-				<small>Hoy Trasnoche es un podcast original de Posta.</small>
-            {
-            episodes && <EpisodesList episodes={episodes.weekly} cls={'weekly'} />
-				}
+				{episodes && <EpisodesList episodes={episodes.weekly} cls={'weekly'} />}
 			</div>
 		</Layout>
 	)

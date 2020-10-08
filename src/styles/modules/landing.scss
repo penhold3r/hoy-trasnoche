@@ -1,35 +1,42 @@
-.lead {
-	font-size: 1.5rem;
-	line-height: 1.7;
+.hero {
+	background: $secondary-grey url('../images/flor-y-calu.jpg') no-repeat center / cover;
+	background-blend-mode: luminosity;
+	padding: 3rem 0;
 
-	a {
-		color: $light;
-		text-decoration: none;
-		position: relative;
-		transition: all 0.3s;
+	.lead {
+		font-size: 1.5rem;
+		line-height: 1.7;
+		text-shadow: 0 0 5px rgba(black, 0.75);
 
-		&:after {
-			content: '';
-			height: 1px;
-			width: 100%;
-			position: absolute;
-			bottom: -3px;
-			left: 0;
-			background: $secondary-color;
-		}
+		a {
+			color: $light;
+			text-decoration: none;
+			position: relative;
+			transition: all 0.3s;
 
-		&:hover {
-			color: $secondary-color;
+			&:after {
+				content: '';
+				height: 1px;
+				width: 100%;
+				position: absolute;
+				bottom: -3px;
+				left: 0;
+				background: $secondary-color;
+			}
+
+			&:hover {
+				color: $secondary-color;
+			}
 		}
 	}
-}
 
-small:before {
-	background: $primary-color;
-	content: '';
-	display: inline-flex;
-	height: 1px;
-	margin-right: 1rem;
-	transform: translateY(-3px);
-	width: 30px;
+	small:before {
+		background: $primary-color;
+		content: '';
+		display: inline-flex;
+		height: 1px;
+		margin-right: 1rem;
+		transform: translateY(-3px);
+		width: 30px;
+	}
 }

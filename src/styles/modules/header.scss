@@ -8,13 +8,12 @@
 	.inner-header {
 		align-items: center;
 		display: flex;
-		justify-content: space-between;
 		margin: 0 auto;
 		max-width: $max-width;
 		padding: 0.5rem 1rem;
 
 		.logo {
-			margin: 0;
+			margin: 0 auto 0 0;
 			width: 100px;
 
 			a {
@@ -27,6 +26,70 @@
 					height: 100%;
 					object-fit: contain;
 					width: 100%;
+				}
+			}
+		}
+
+		.navigation {
+			display: flex;
+			gap: 1rem;
+			margin: 0 2rem 0 0;
+
+			a {
+				color: $secondary-color;
+				text-decoration: none;
+				text-transform: uppercase;
+				letter-spacing: 0.05rem;
+				font-size: 0.8rem;
+				transition: 0.3s;
+
+				&:hover {
+					color: $primary-color;
+				}
+			}
+		}
+
+		.links {
+			display: flex;
+			gap: 1rem;
+
+			a {
+				display: flex;
+				border-radius: 50%;
+				position: relative;
+
+				width: 30px;
+				overflow: hidden;
+
+				&:before {
+					content: '';
+					background: $primary-color;
+					position: absolute;
+					top: 0;
+					left: 0;
+					height: 100%;
+					transition: 0.3s;
+					width: 100%;
+					z-index: 2;
+					mix-blend-mode: overlay;
+				}
+
+				img {
+					filter: grayscale(1);
+					position: relative;
+					width: 100%;
+					z-index: 1;
+					transition: 0.3s;
+				}
+
+				&:hover {
+					&:before {
+						opacity: 0;
+					}
+
+					img {
+						filter: grayscale(0);
+					}
 				}
 			}
 		}

@@ -4,3 +4,11 @@
 		url('serif-gothic-bq.ttf') format('truetype'),
 		url('serif-gothic-bq.svg#Serif Gothic Black') format('svg');
 }
+
+@font-face {
+	font-family: 'Friz Quadrata';
+	src: url('Friz-Quadrata-Bold.woff2') format('woff2'),
+		url('Friz-Quadrata-Bold.woff') format('woff'),
+		url('Friz-Quadrata-Bold.ttf') format('truetype'),
+		url('Friz-Quadrata-Bold.svg#Friz Quadrata Bold') format('svg');
+}
