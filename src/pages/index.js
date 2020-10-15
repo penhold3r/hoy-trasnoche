@@ -13,12 +13,10 @@ const IndexPage = () => {
 			query {
 				spotify {
 					episodes {
-						weekly {
-							id
-							name
-							slug
-							date(formatString: "dddd D [de] MMMM, YYYY", locale: "es")
-						}
+						id
+						name
+						slug
+						date(formatString: "dddd D [de] MMMM, YYYY", locale: "es")
 					}
 				}
 			}
@@ -41,7 +39,7 @@ const IndexPage = () => {
 				</div>
 			</div>
 			<div className='container'>
-				{episodes && <EpisodesList episodes={episodes.weekly} cls={'weekly'} />}
+				{episodes && <EpisodesList episodes={episodes} cls={'weekly'} />}
 			</div>
 		</Layout>
 	)

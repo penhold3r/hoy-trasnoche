@@ -35,13 +35,28 @@
 			gap: 1rem;
 			margin: 0 2rem 0 0;
 
+			@include phone {
+				position: fixed;
+				bottom: 0;
+				width: 100%;
+				background: black;
+				left: 0;
+				justify-content: center;
+				padding: 1rem;
+				gap: 2rem;
+			}
+
 			a {
 				color: $secondary-color;
+				font-size: 0.8rem;
+				letter-spacing: 0.05rem;
 				text-decoration: none;
 				text-transform: uppercase;
-				letter-spacing: 0.05rem;
-				font-size: 0.8rem;
 				transition: 0.3s;
+
+				@include phone {
+					font-size: 1rem;
+				}
 
 				&:hover {
 					color: $primary-color;
@@ -62,24 +77,24 @@
 				overflow: hidden;
 
 				&:before {
-					content: '';
 					background: $primary-color;
+					content: '';
+					height: 100%;
+					left: 0;
+					mix-blend-mode: overlay;
 					position: absolute;
 					top: 0;
-					left: 0;
-					height: 100%;
 					transition: 0.3s;
 					width: 100%;
 					z-index: 2;
-					mix-blend-mode: overlay;
 				}
 
 				img {
 					filter: grayscale(1);
 					position: relative;
+					transition: 0.3s;
 					width: 100%;
 					z-index: 1;
-					transition: 0.3s;
 				}
 
 				&:hover {

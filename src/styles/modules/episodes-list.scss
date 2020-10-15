@@ -12,15 +12,19 @@
 		transition: all 0.3s;
 		text-decoration: none;
 
+		@include tablet {
+			padding: 3rem 1.5rem 2rem;
+		}
+
 		.episode-number {
 			background: $primary-color;
 			color: $light;
 			display: inline-block;
-			padding: 0.5rem 1rem;
 			font-family: $display-font;
+			padding: 0.5rem 1rem;
 			position: absolute;
-			top: -1rem;
 			right: 1rem;
+			top: -1rem;
 		}
 
 		.episode-title {
@@ -28,14 +32,36 @@
 			font-family: $display-font;
 			font-size: 1.5rem;
 			letter-spacing: 0.09rem;
-			text-transform: uppercase;
+			line-height: 1;
 			margin: 0 0 1rem;
+			text-transform: uppercase;
 			transition: all 0.3s;
 		}
 
 		.episode-date {
 			color: $light;
 			margin: 0;
+		}
+
+		&:after {
+			align-items: flex-end;
+			color: $light;
+			content: 'Ver info del episodio';
+			display: flex;
+			font-size: 1.75rem;
+			font-weight: bold;
+			height: 100%;
+			opacity: 0;
+			padding-bottom: 1rem;
+			position: absolute;
+			right: 0;
+			top: 0;
+			transition: 0.4s;
+			user-select: none;
+
+			@include tablet {
+				content: none;
+			}
 		}
 
 		&:hover {
@@ -45,6 +71,11 @@
 
 			.episode-title {
 				color: $secondary-grey;
+			}
+
+			&:after {
+				right: 2rem;
+				opacity: 0.5;
 			}
 		}
 	}

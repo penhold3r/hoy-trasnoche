@@ -7,9 +7,11 @@
 
 	&__name {
 		color: $primary-color;
-		font-size: 3rem;
+		font-size: 2.75rem;
 		margin: 0 0 1rem;
+		line-height: 1;
 		letter-spacing: 0.1rem;
+		text-transform: uppercase;
 		font-family: $display-font;
 	} /* __name */
 
@@ -20,10 +22,38 @@
 		color: $secondary-grey;
 
 		.link {
-			text-decoration: none;
+			align-items: center;
+			background: $dark;
+			border: 1px solid $secondary-grey;
+			box-shadow: 4px 4px 0 0 $secondary-grey;
 			color: white;
-			background: $primary-grey;
-			padding: 0.25rem 1rem;
+			display: flex;
+			font-size: 0.8rem;
+			font-weight: bold;
+			gap: 0.5rem;
+			letter-spacing: 0.075rem;
+			padding: 0.5rem 1rem;
+			text-decoration: none;
+			text-transform: uppercase;
+			transition: 0.3s;
+
+			&:before {
+				background: url('../images/icons/spotify.svg') no-repeat center / contain;
+				content: '';
+				height: 1.25rem;
+				width: 1.25rem;
+				mix-blend-mode: normal;
+				transition: 0.3s;
+			}
+
+			&:hover {
+				background: $primary-grey;
+				color: $dark;
+
+				&:before {
+					mix-blend-mode: multiply;
+				}
+			}
 		}
 	} /* __date */
 
@@ -53,7 +83,7 @@
 
 				.poster {
 					margin: 0 0 1rem;
-					height: 275px;
+					height: 300px;
 
 					@include tablet {
 						height: 350px;
@@ -106,6 +136,7 @@
 
 					&:hover {
 						background: $secondary-grey;
+						color: $dark;
 					}
 				} /* .imdb */
 			} /* .movie-card */

@@ -3,6 +3,7 @@ import { isMobile } from 'react-device-detect'
 
 import Layout from '../components/layout'
 import Link from '../components/link'
+import MovieCard from '../components/movie-card'
 
 import episodesMovies from '../data/movies'
 
@@ -54,7 +55,7 @@ const Episode = ({ pageContext }) => {
 		}
 	}, [movies, episode.id])
 
-	console.log('EP: ', episode.id)
+	console.log('EP: ', episode)
 
 	return (
 		<Layout pageTitle={episode.name}>
@@ -75,24 +76,7 @@ const Episode = ({ pageContext }) => {
 							{moviesData && (
 								<div className='movies__list'>
 									{moviesData.map(movie => (
-										<div className='movie-card' data-id={movie.id} key={movie.id}>
-											<div className='poster'>
-												<img src={movie.poster} alt={movie.title} />
-											</div>
-											<div className='data'>
-												<h4 className='title'>{movie.title}</h4>
-												<h5 className='director'>
-													<span>Dirección: </span>
-													<span className='name'>{movie.director}</span>
-												</h5>
-												<p className='info'>
-													{movie.year} &mdash; {movie.country}
-												</p>
-											</div>
-											<Link to={movie.link} className='imdb'>
-												Ver en IMDB
-											</Link>
-										</div>
+										<MovieCard movie={movie} key={movie.id} />
 									))}
 								</div>
 							)}

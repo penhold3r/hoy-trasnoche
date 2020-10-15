@@ -1,0 +1,166 @@
+.daily-page {
+	padding: 3rem 1rem !important;
+
+	.title {
+		font-family: $display-font;
+		color: $primary-color;
+		font-size: 2rem;
+		letter-spacing: 0.05rem;
+		line-height: 1;
+		margin: 0 0 1rem;
+		text-transform: uppercase;
+	} /* .title */
+
+	.intro {
+		margin: 0 0 1rem;
+		font-size: 1.25rem;
+		max-width: 600px;
+	} /* .intro */
+
+	.list {
+		display: flex;
+		flex-direction: column;
+		gap: 2.5rem;
+		margin: 4rem 0;
+
+		.episode-card {
+			position: relative;
+			background: $dark;
+			border: 1px solid $primary-grey;
+			box-shadow: 4px 4px 0 0 $primary-grey;
+
+			.episode-number {
+				background: $primary-color;
+				color: $light;
+				display: inline-block;
+				font-family: $display-font;
+				padding: 0.5rem 1rem;
+				position: absolute;
+				right: 1rem;
+				top: -1rem;
+			} /* .episode-number */
+
+			.episode-date {
+				left: calc(225px + 1rem);
+				top: 1rem;
+				position: absolute;
+
+				@include tablet {
+					left: calc(30% + 1rem);
+				}
+
+				@include phone {
+					top: 2.25rem;
+				}
+			} /* .episode-date */
+
+			.movie-card {
+				display: grid;
+				gap: 1rem;
+				grid-template-columns: 225px 1fr;
+				position: relative;
+
+				@include tablet {
+					grid-template-columns: 30% 1fr;
+				}
+
+				.poster {
+					img {
+						display: block;
+						height: 100%;
+						object-fit: cover;
+						width: 100%;
+
+						@include phone {
+							object-fit: contain;
+							height: auto;
+						}
+					}
+				} /* .poster */
+
+				.data {
+					padding: 3rem 1.5rem 3rem 0;
+
+					@include tablet {
+						.title {
+							font-size: 1.5rem;
+							line-height: 1;
+							margin: 0 0 0.5rem;
+						}
+
+						.director {
+							margin: 0;
+						}
+					}
+
+					@include phone {
+						padding: 5rem 1.5rem 7rem 0;
+					}
+				} /* .data */
+
+				.imdb {
+					background: $dark;
+					border: 1px solid $secondary-grey;
+					bottom: 1rem;
+					box-shadow: 4px 4px 0 0 $secondary-grey;
+					color: white;
+					font-size: 0.8rem;
+					font-weight: bold;
+					left: calc(225px + 1rem);
+					letter-spacing: 0.075rem;
+					padding: 0.25rem 1rem;
+					position: absolute;
+					text-decoration: none;
+					text-transform: uppercase;
+					transition: 0.3s;
+
+					@include tablet {
+						left: calc(30% + 1rem);
+					}
+
+					@include phone {
+						bottom: 4rem;
+					}
+
+					&:hover {
+						background: $primary-grey;
+						color: $dark;
+					}
+				} /* .imdb. */
+			} /* .movie-card */
+
+			.link {
+				background: $secondary-color;
+				border: 1px solid $primary-color;
+				box-shadow: 4px 4px 0 0 $primary-color;
+				color: white;
+				font-size: 0.8rem;
+				font-weight: bold;
+				letter-spacing: 0.075rem;
+				padding: 0.25rem 1rem;
+				position: absolute;
+				text-decoration: none;
+				text-transform: uppercase;
+				transition: 0.3s;
+				bottom: 1rem;
+				right: 1rem;
+
+				@include phone {
+					left: calc(30% + 1rem);
+					right: auto;
+				}
+
+				&:hover {
+					background: $secondary-grey;
+					color: $dark;
+				}
+			} /* .link */
+
+			&.double {
+				display: flex;
+				flex-direction: column;
+				gap: 1rem;
+			}
+		} /* .episode-card */
+	} /* .list */
+} /* .daily-page */

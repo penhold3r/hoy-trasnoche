@@ -8,20 +8,25 @@
 		line-height: 1.7;
 		text-shadow: 0 0 5px rgba(black, 0.75);
 
+		@include tablet {
+			font-size: 1.25rem;
+			line-height: 1.5;
+		}
+
 		a {
 			color: $light;
-			text-decoration: none;
 			position: relative;
+			text-decoration: none;
 			transition: all 0.3s;
 
 			&:after {
+				background: $secondary-color;
+				bottom: -3px;
 				content: '';
 				height: 1px;
-				width: 100%;
-				position: absolute;
-				bottom: -3px;
 				left: 0;
-				background: $secondary-color;
+				position: absolute;
+				width: 100%;
 			}
 
 			&:hover {

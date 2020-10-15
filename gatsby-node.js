@@ -1,4 +1,5 @@
 const fetch = require(`node-fetch`)
+const Promise = require('promise')
 const path = require('path')
 const slugify = require('slugify')
 
@@ -15,15 +16,7 @@ exports.sourceNodes = async ({ actions: { createNode }, createContentDigest }) =
 	const clientId = process.env.GATSBY_CLIENT_ID
 	const clientSecret = process.env.GATSBY_CLIENT_SECRET
 
-	// get data from GitHub API at build time
-	// const result = await fetch(`https://api.github.com/repos/gatsbyjs/gatsby`)
-	// const resultData = await result.json()
-
 	const showId = '6C4MdNWQSPhmzBlIVau30e' // Hoy Trasnoche Spotify ID
-
-	console.log('MODE ', process.env.NODE_ENV)
-	console.log('ID ', clientId)
-	console.log('SECRET ', clientSecret)
 
 	const auth = Buffer.from(clientId + ':' + clientSecret).toString('base64')
 	const conf = {
@@ -39,10 +32,9 @@ exports.sourceNodes = async ({ actions: { createNode }, createContentDigest }) =
 	const resultData = await result.json()
 	const token = resultData.access_token
 
-	console.log('TOKEN ', token)
-
 	let nextPage = `https://api.spotify.com/v1/shows/${showId}/episodes?offset=0&limit=50&market=ES`
 	let episodes = []
+	let weekly, daily
 
 	while (nextPage) {
 		let { next, items } = await fetchEpisodes(token, nextPage)
@@ -50,14 +42,13 @@ exports.sourceNodes = async ({ actions: { createNode }, createContentDigest }) =
 		episodes = [...episodes, ...items]
 	}
 
-	console.log('EP ', episodes.length)
+	//-------------------------------------------------------------------------------
+	// Weekly episodes nodes
+
+	weekly = episodes.filter(({ name }) => !/diario/i.test(name))
 
 	createNode({
-		token,
-		episodes: {
-			weekly: episodes.filter(({ name }) => !/diario/i.test(name)),
-			daily: episodes.filter(({ name }) => /diario/i.test(name)),
-		},
+		episodes: [...weekly],
 		// required fields
 		id: `spotify-api`,
 		parent: null,
@@ -66,6 +57,42 @@ exports.sourceNodes = async ({ actions: { createNode }, createContentDigest }) =
 			type: `spotify`,
 			contentDigest: createContentDigest(resultData),
 		},
+	})
+
+	//-------------------------------------------------------------------------------
+	// Daily episodes nodes
+
+	daily = episodes.filter(({ name }) => /diario/i.test(name))
+	daily = daily.map(async episode => {
+		// two movies
+		if (episode.name.includes('+')) {
+			const { 1: movies } = episode.name.split(':')
+			const moviesList = movies.split('+')
+
+			const movie1 = await fetchMovie(encodeURIComponent(moviesList[0].replace(' ', '+')))
+			const movie2 = await fetchMovie(encodeURIComponent(moviesList[1].replace(' ', '+')))
+
+			return { ...episode, movie: null, movies: [movie1, movie2] }
+		} else {
+			const { 1: movieTitle } = episode.name.split(':')
+			const movie = await fetchMovie(encodeURIComponent(movieTitle.replace(' ', '+')))
+
+			return { ...episode, movie, movies: null }
+		}
+	})
+
+	await Promise.all(daily).then(episodes => {
+		createNode({
+			episodes,
+			// required fields
+			id: `spotify-daily`,
+			parent: null,
+			children: [],
+			internal: {
+				type: `daily`,
+				contentDigest: createContentDigest(daily),
+			},
+		})
 	})
 }
 
@@ -95,6 +122,25 @@ const fetchEpisodes = async (token, nextPage) => {
 	return { next, items }
 }
 
+const fetchMovie = async movieTitle => {
+	const title = movieTitle.includes('Ricky') ? 'Riki-Oh' : movieTitle
+
+	const api = 'https://www.omdbapi.com/?apikey=faa9804f'
+	const resp = await fetch(`${api}&t=${title}`)
+	const data = await resp.json()
+	const { Title, Year, Country, Director, Poster, imdbID } = await data
+
+	return {
+		id: imdbID,
+		title: Title,
+		year: Year,
+		country: Country,
+		director: Director,
+		poster: Poster,
+		link: 'https://www.imdb.com/title/' + imdbID,
+	}
+}
+
 /************************************************************************
  *
  *  EPISODES PAGES
@@ -106,27 +152,14 @@ exports.createPages = async ({ graphql, actions }) => {
 		query {
 			spotify {
 				episodes {
-					weekly {
-						id
-						name
-						slug
-						description
-						date(formatString: "dddd D [de] MMMM, YYYY", locale: "es")
-						urls {
-							app
-							desktop
-						}
-					}
-					daily {
-						id
-						name
-						slug
-						description
-						date(formatString: "dddd D [de] MMMM, YYYY", locale: "es")
-						urls {
-							app
-							desktop
-						}
+					id
+					name
+					slug
+					description
+					date(formatString: "dddd D [de] MMMM, YYYY", locale: "es")
+					urls {
+						app
+						desktop
 					}
 				}
 			}
@@ -134,9 +167,12 @@ exports.createPages = async ({ graphql, actions }) => {
 	`)
 	const episodeTemplate = path.resolve(`src/templates/episode.js`)
 
-	const { weekly, daily } = queryResults.data.spotify.episodes
+	const { episodes } = queryResults.data.spotify
 
-	weekly.forEach((node, i, arr) => {
+	episodes.forEach((node, i, arr) => {
+		const prev = arr[i - 1] ? `/episodio/${arr[i - 1].slug}` : null
+		const next = arr[i + 1] ? `/episodio/${arr[i + 1].slug}` : null
+
 		createPage({
 			path: `/episodio/${node.slug}`,
 			component: episodeTemplate,
@@ -144,19 +180,8 @@ exports.createPages = async ({ graphql, actions }) => {
 				episode: {
 					...node,
 					numberEp: arr.length - i,
-				},
-			},
-		})
-	})
-
-	daily.forEach((node, i, arr) => {
-		createPage({
-			path: `/episodio/${node.slug}`,
-			component: episodeTemplate,
-			context: {
-				episode: {
-					...node,
-					numberEp: arr.length - i,
+					prev,
+					next,
 				},
 			},
 		})

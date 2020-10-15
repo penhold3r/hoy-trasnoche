@@ -206,7 +206,55 @@ export default [
 		],
 	},
 	{
-		episode: '6OjYjSf3ZUM78V6HcUgmSX', // colitis
-		movies: ['tt8647310', 'tt6199572', 'tt0064921'],
+		episode: '1eeD4GHi1f1RG246YSMQgz', // monjas
+		movies: ['tt4964788', 'tt5814060', 'tt6731592'],
+	},
+	{
+		episode: '43hl3SlEwvqWjrQiN81InA', // 25: ayer trasnoche
+		movies: ['tt5774450', 'tt5052474'],
+	},
+	{
+		episode: '144hnTv7vi6M6gNks179e4', // 26: tradi
+		movies: ['tt5433398', 'tt7073710'],
+	},
+	{
+		episode: '5f1RVNVI3FErIR67R77f2P', // 27: john y nico
+		movies: ['tt6998518', 'tt7308198'],
+	},
+	{
+		episode: '5P5yUy6ojLt2nGYgthwpCX', // 28: pequeño
+		movies: ['tt1517451', 'tt9062342', 'tt5816712'],
+	},
+	{
+		episode: '3hdQF2NX90av7XCm6YSRDA', // 29: bruce
+		movies: ['tt5057140', 'tt5688932', 'tt0096257'],
+	},
+	{
+		episode: '1GaiLH1tE5X0Aisx4g0tpT', // halloween
+		movies: ['tt1502407', 'tt6518270'],
+	},
+	{
+		episode: '3cNHKhT0JZzIThiHopE9mB', // bulsara
+		movies: ['tt1727824'],
+	},
+	{
+		episode: '0qy6QAU8ImubH2Y5yiISSv', // nazis
+		movies: ['tt7349662', 'tt7545566'],
+	},
+	{
+		episode: '07YTqPPqkNeXy6x5cLjO6k', // alternativa
+		movies: ['tt0069049', 'tt6412452', 'tt0324625'],
+	},
+	{
+		episode: '0jLurQFEUrAnb6RPKeCIv6', // luna
+		movies: ['tt1213641', 'tt0099763'],
+	},
+	{
+		episode: '2Qkn1hpdWW2CIT94V9V3Wv', // cumple calo
+		movies: null,
+	},
+	{
+		episode: '2lNUMo4JXaGqw3P320BsF5', // cumple flor
+		movies: null,
 	},
 ]
