@@ -257,4 +257,136 @@ export default [
 		episode: '2lNUMo4JXaGqw3P320BsF5', // cumple flor
 		movies: null,
 	},
+	{
+		episode: '2MkuT6IuG4wYMIeUdhGpJT', // espiritismo
+		movies: ['tt0076786', 'tt1034415', 'tt6269368'],
+	},
+	{
+		episode: '6mmkx0ozRLJtYuJaKzobN2', // premio caca
+		movies: ['tt5083738', 'tt8998472'],
+	},
+	{
+		episode: '6rcDirgCFSa8viz41bUsez', // cadaverico
+		movies: ['tt6966692', 'tt0066412'],
+	},
+	{
+		episode: '5tKTehrD2lzI5OhhcFPV19', // oscars 2019
+		movies: ['tt9168816'],
+	},
+	{
+		episode: '0UCbmETnuNtuwWzVelnf0p', // trastorrent
+		movies: ['tt5501104', 'tt9573980', 'tt4669296', 'tt1014809'],
+	},
+	{
+		episode: '5CTlxeXpiEgwq3edOv2dKf', // tía marta
+		movies: ['tt6857112', 'tt6111574'],
+	},
+	{
+		episode: '36QlGbLnnkvltwbQ4vskLF', // esta poronga
+		movies: ['tt6491178', 'tt0800325', 'tt0037932'],
+	},
+	{
+		episode: '4suDLbiv2eCb4iYWsADnVp', // bigote hitler
+		movies: ['tt8561690', 'tt5960374', 'tt7905466', 'tt0109424'],
+	},
+	{
+		episode: '24fpCY3XuL6nLYFfnYHwHy', // venerea
+		movies: ['tt8160262', 'tt1172994'],
+	},
+	{
+		episode: '6AF8kCxuW3jCMvqRlX2gdS', // muere marvel
+		movies: ['tt8311792', 'tt7962932'],
+	},
+	{
+		episode: '37bg9bB8ihPElAVsJ19DzP', // cielo drive
+		movies: ['tt8453986', 'tt1748207'],
+	},
+	{
+		episode: '7v5gfrDwd6cczAOqiFuxFY', // bordado
+		movies: ['tt2481498', 'tt6146586', 'tt7752126', 'tt7323600'],
+	},
+	{
+		episode: '27MtaBSX9xMyRbM3FwcOfN', // raining blood
+		movies: ['tt7958736', 'tt2066051', 'tt3741700', 'tt0120188'],
+	},
+	{
+		episode: '2aKIeV0agnBS4NjGuPAE5U', // bb sanzo
+		movies: ['tt10511826', 'tt0078797'],
+	},
+	{
+		episode: '76NuFvMxtolRrJgzsDIfQD', // infancia
+		movies: ['tt6105098', 'tt5613484'],
+	},
+	{
+		episode: '3vOliu3qIZ07nqkHJqdC6F', // hijo navidad
+		movies: ['tt8364368', 'tt0071819', 'tt0242527'],
+	},
+	{
+		episode: '2ri9evXKwoJeKgsgKxXifh', // oggi
+		movies: ['tt6768578', 'tt0056512'],
+	},
+	{
+		episode: '03YsIW2DSItiEhJ268MWd9', // falopa
+		movies: ['tt1489887', 'tt0094793'],
+	},
+	{
+		episode: '1AfU3IhlxiHYgCNWghDTN3', // dr muerte
+		movies: null,
+	},
+	{
+		episode: '02OwpvBJnK3ojdqUDoBsc5', // habia una vez poronga
+		movies: ['tt7131622', 'tt9358044'],
+	},
+	{
+		episode: '6RdUAZgXW7WKu8pOjtQPJa', // entrar todo
+		movies: ['tt8266310', 'tt2639336', 'tt7464188'],
+	},
+	{
+		episode: '6ABSH5Nry7kGqOULQKUPQS', // muertos sin vida
+		movies: ['tt7349950', 'tt9775716', 'tt6483364', 'tt4827558', 'tt8974964'],
+	},
+	{
+		episode: '1iz7APXNe7WTjW5jjjTf5c', // de caro
+		movies: ['tt9351854'],
+	},
+	{
+		episode: '6dxeV15ztx2ziMeJmxDFSI', // dos toses
+		movies: ['tt2935510', 'tt7468616'],
+	},
+	{
+		episode: '5yUu2DDyWAUguq9F9cWA2r', // rica
+		movies: ['tt8772262', 'tt5342950'],
+	},
+	{
+		episode: '5ZV1f3AJ1XnfRMckPlSbpY', // gotham
+		movies: ['tt7286456', 'tt9026524'],
+	},
+	{
+		episode: '28JwtuGN3Cs0BSaPpGmRJv', // trasnochecer
+		movies: ['tt1206885', 'tt6062774', 'tt7339248'],
+	},
+	{
+		episode: '0XcxOTrKEuqHVsHlLf0Zf8', // tan cierto
+		movies: ['tt6751668', 'tt0137523', 'tt8883524'],
+	},
+	{
+		episode: '53CWQ9hGBLN04gpvjuKUme', // jorge corona
+		movies: ['tt6450804', 'tt8526872'],
+	},
+	{
+		episode: '1DVrVHn1U9OE2UMbCVvYMP', // lindo cine
+		movies: ['tt1302006', 'tt0065398'],
+	},
+	{
+		episode: '2FQrV7H1bkA1IU6loY5XCH', // poronga seguido
+		movies: ['tt10665144'],
+	},
+	{
+		episode: '772fSqGyhgPmwfc74lEyuq', // mamá murió
+		movies: ['tt7653254', 'tt8946378', 'tt1522259'],
+	},
+	{
+		episode: '3zXSLyrHfUpvD0FcKe1krF', // fin 2019
+		movies: null,
+	},
 ]
