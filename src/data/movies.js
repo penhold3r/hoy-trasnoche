@@ -389,4 +389,120 @@ export default [
 		episode: '3zXSLyrHfUpvD0FcKe1krF', // fin 2019
 		movies: null,
 	},
+	{
+		episode: '3xyXbtdQMlHYJa0ac6uf5B', // decada trasnochada
+		movies: null,
+	},
+	{
+		episode: '36lfPTZubYcU532cxGOZUN', // oscars 2020
+		movies: ['tt10305932'],
+	},
+	{
+		episode: '7HWfDjowL30FASReMCVxsP', // biondini
+		movies: ['tt6394270', 'tt8745960'],
+	},
+	{
+		episode: '3a5iFwBQe9KXEm8XNMxTH4', // perritos falopa
+		movies: ['tt1051906', 'tt0099637'],
+	},
+	{
+		episode: '7MMrz8RybGYJaHPOYf0p1u', // trastorrent 2
+		movies: ['tt5073642', 'tt8722346'],
+	},
+	{
+		episode: '6ITrKiYfcqmUKJWfH5vgiz', // coronga
+		movies: ['tt9425078'],
+	},
+	{
+		episode: '7jZcaBi6bL2gkwO6TJMP1k', // ep 100
+		movies: ['tt8244784', 'tt0039689'],
+	},
+	{
+		episode: '5haTR0b8pu55OnOWc33h98', // supon
+		movies: ['tt8372298', 'tt0067900'],
+	},
+	{
+		episode: '26StAVK0AbkF2Q3dOT7MYl', // leones
+		movies: ['tt0083001', 'tt0053459'],
+	},
+	{
+		episode: '4WWqdAiaGyw75igKY0V7c7', // polanski
+		movies: ['tt8613070', 'tt2398149', 'tt0113247'],
+	},
+	{
+		episode: '2vBiQoovjEAW9sjLQJr5q6', // caca y sangre
+		movies: ['tt7879442', 'tt0049902'],
+	},
+	{
+		episode: '1bEqD0j3ne6r9VHAEgMl2I', // carpincho
+		movies: ['tt11615290', 'tt1785612'],
+	},
+	{
+		episode: '1UGHiCxhTtBCzoVenIMriX', // martinez suarez
+		movies: ['tt7347846', 'tt0099426'],
+	},
+	{
+		episode: '093BH56wnp7VzVsGVd3Ejh', // corneta
+		movies: ['tt9000224', 'tt0073092'],
+	},
+	{
+		episode: '6OjYjSf3ZUM78V6HcUgmSX', // pañal
+		movies: ['tt8647310', 'tt6199572', 'tt0064921'],
+	},
+	{
+		episode: '1cxIFDgXc34iU6FXuxhmbA', // desver
+		movies: ['tt0065735'],
+	},
+	{
+		episode: '7dmoEIdrhym3lve8jw85zg', // rosemary
+		movies: ['tt6624144', 'tt0105151'],
+	},
+	{
+		episode: '6GLNFfyFaTQE3yR8W2oVus', // colitis
+		movies: ['tt8430598', 'tt10314450'],
+	},
+	{
+		episode: '7cEkxFbsLza0v0N1yjq5V0', // menstruación
+		movies: ['tt9777644', 'tt0455857', 'tt0090655'],
+	},
+	{
+		episode: '6hNn4YQvSHAvj7muE37tHr', // problematica
+		movies: ['tt0087985', 'tt0093748'],
+	},
+	{
+		episode: '4TtYQFluyiAcvOyPis9cvG', // rulemanes
+		movies: ['tt8399664', 'tt0194378'],
+	},
+	{
+		episode: '0BmugVXgyiVgFF1HU2hwUc', // matrix
+		movies: ['tt9484998', 'tt9072352', 'tt0093822'],
+	},
+	{
+		episode: '69bQzTT5nBDaoqk4BeiKbE', // abogado mediatico
+		movies: ['tt10003008', 'tt0082089'],
+	},
+	{
+		episode: '2XkjWPPb8FQnld169XjRZT', // tenet
+		movies: null,
+	},
+	{
+		episode: '31Hes8i4tdexjxi7tbDet2', // ardilla
+		movies: ['tt10011412', 'tt0112769'],
+	},
+	{
+		episode: '3KAV7u3ZsBKU8I8ioe189a', // coprofagos
+		movies: ['tt11614912', 'tt0108174'],
+	},
+	{
+		episode: '7gE8by6t3vk3zFddJfXaKc', // original netflix
+		movies: ['tt7939766'],
+	},
+	{
+		episode: '12PwiRg6RdRMKJ2fuiJsEG', // cristian u
+		movies: ['tt10556022'],
+	},
+	{
+		episode: '1qqSikY4pLzo7cgweyaXY9', // que fuerte
+		movies: ['tt10065694', 'tt0440803'],
+	},
 ]

@@ -58,7 +58,7 @@ const Episode = ({ pageContext }) => {
 	console.log('EP: ', episode)
 
 	return (
-		<Layout pageTitle={episode.name}>
+		<Layout pageTitle={`| ${episode.name}`}>
 			<section className='episode'>
 				<div className='container'>
 					<span className='episode__number'>Episodio #{episode.numberEp}</span>
